@@ -1,0 +1,15 @@
+{
+  "name": "ausgaben-tracker-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sven Piller <sven.piller@gmail.com> (https://github.com/sven-piller\\)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.12.2",
+    "logservice": "0.0.1"
+  }
+}
