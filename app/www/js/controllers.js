@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
@@ -75,4 +75,31 @@ angular.module('starter.controllers', [])
 
 .controller('ItemCtrl', function($scope, $stateParams) {})
 
-.controller('ItemCreateCtrl', function($scope, $stateParams) {});
+.controller('ItemCreateCtrl', function($scope, $stateParams, $cordovaSQLite) {
+  // $scope.insert = function(firstname, lastname) {
+  //     var query = "INSERT INTO people (firstname, lastname) VALUES (?,?)";
+  //     $cordovaSQLite.execute(db, query, [firstname, lastname]).then(
+  //       function(res) {
+  //         console.log("INSERT ID -> " + res.insertId);
+  //       },
+  //       function(err) {
+  //         console.error(err);
+  //       });
+  //   }
+  //
+  // $scope.select = function(lastname) {
+  // 	var query = "SELECT firstname, lastname FROM people WHERE lastname = ?";
+  // 	$cordovaSQLite.execute(db, query, [lastname]).then(function(res) {
+  // 		if (res.rows.length > 0) {
+  // 			console.log("SELECTED -> " + res.rows.item(0).firstname + " " + res.rows
+  // 				.item(0).lastname);
+  // 		} else {
+  // 			console.log("No results found");
+  // 		}
+  // 	}, function(err) {
+  // 		console.error(err);
+  // 	});
+  // }
+
+
+});
