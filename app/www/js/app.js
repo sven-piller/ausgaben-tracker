@@ -24,15 +24,43 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 			$cordovaSQLite.execute(db,
 				"CREATE TABLE IF NOT EXISTS items (id integer primary key, title text, merchant text, amount text, date text)"
 			);
+			// window.plugins.sqlDB.copy("populated.db", function() {
+			// 	db = $cordovaSQLite.openDB("populated.db");
+			// 	$location.path("/categories");
+			// 	$ionicLoading.hide();
+			// }, function(error) {
+			// 	console.error("There was an error copying the database: " + error);
+			// 	db = $cordovaSQLite.openDB("populated.db");
+			// 	$location.path("/categories");
+			// 	$ionicLoading.hide();
+			// });
 		} else {
-			db = window.openDatabase("my.db", '1', 'my', 1024 * 1024 * 100); // browser
+			db = openDatabase("websql.db", '1.0', "My WebSQL Database", 2 * 1024 *
+				1024);
 			db.transaction(function(tx) {
+				tx.executeSql("DROP TABLE IF EXISTS tblCategories");
 				tx.executeSql(
 					"CREATE TABLE IF NOT EXISTS items (id integer primary key, title text, merchant text, amount text, date text)"
 				);
+				tx.executeSql(
+					"CREATE TABLE IF NOT EXISTS tblTodoLists (id integer primary key, category_id integer, todo_list_name text)"
+				);
+				tx.executeSql(
+					"CREATE TABLE IF NOT EXISTS tblTodoListItems (id integer primary key, todo_list_id integer, todo_list_item_name text)"
+				);
+				tx.executeSql("INSERT INTO tblCategories (category_name) VALUES (?)", [
+					"Shopping"
+				]);
+				tx.executeSql("INSERT INTO tblCategories (category_name) VALUES (?)", [
+					"Chores"
+				]);
+				tx.executeSql("INSERT INTO tblCategories (category_name) VALUES (?)", [
+					"School"
+				]);
 			});
+			$location.path("/categories");
+			$ionicLoading.hide();
 		}
-
 	});
 })
 
