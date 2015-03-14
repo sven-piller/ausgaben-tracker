@@ -6,11 +6,9 @@
 // the identifier, the filesystem location
 // or the URL
 var pluginlist = [
-  "org.apache.cordova.console",
-  "org.apache.cordova.device",
-  "org.apache.cordova.statusbar",
-  "https://github.com/brodysoft/Cordova-SQLitePlugin.git",
-  "https://github.com/an-rahulpandey/cordova-plugin-dbcopy.git"
+	"org.apache.cordova.console",
+	"org.apache.cordova.device",
+	"org.apache.cordova.statusbar"
 ];
 
 // no need to configure below
@@ -21,10 +19,10 @@ var sys = require('sys')
 var exec = require('child_process').exec;
 
 function puts(error, stdout, stderr) {
-  sys.puts(stdout)
+	sys.puts(stdout)
 }
 
 pluginlist.forEach(function(plug) {
-  exec("ionic plugin add " + plug, puts);
+	exec("ionic plugin add " + plug, puts);
 });
 console.log("hook executed");

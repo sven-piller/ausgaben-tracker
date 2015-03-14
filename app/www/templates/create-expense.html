@@ -1,0 +1,48 @@
+<ion-view>
+
+	<ion-nav-buttons>
+		<div class="buttons">
+			<h1 class="title">Create Todo</h1>
+		</div>
+	</ion-nav-buttons>
+
+	<ion-content>
+		<div class="list">
+			<ion-list>
+				<li class="item item-input item-floating-label">
+					<span class="input-label">Datum</span>
+					<input type="date" name="date" ng-model="expense.date" required>
+					</textarea>
+				</li>
+
+				<li class="item item-input item-floating-label">
+					<span class="input-label">Einkauf</span>
+					<input type="text" placeholder="Einkauf" name="content" ng-model="expense.content" required>
+					</textarea>
+				</li>
+
+				<li class="item item-input item-floating-label">
+					<span class="input-label">Händler</span>
+					<input type="text" placeholder="Händler" name="merchant" ng-model="expense.merchant" required>
+					</textarea>
+				</li>
+
+				<li class="item item-input item-floating-label">
+					<span class="input-label">Kategorie</span>
+					<input type="text" placeholder="Kategorie" name="categories" ng-model="expense.categories" required>
+					</textarea>
+				</li>
+
+				<li class="item item-input item-floating-label">
+					<span class="input-label">Betrag</span>
+					<input type="number" placeholder="Betrag" name="amount" ng-model="expense.amount" required>
+					</textarea>
+				</li>
+
+				<ion-button class="button button-block button-positive" ng-click="create()">
+					Add
+				</ion-button>
+			</ion-list>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,20 @@
+<ion-view>
+	<ion-nav-buttons>
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios7-minus-outline button-positive" ng-click="data.showDelete = !data.showDelete;"></button>
+			<h1 class="title ">All Todo Items</h1>
+			<button class="button button-positive" ui-sref="app.createExpense">New</button>
+		</div>
+	</ion-nav-buttons>
+
+	<ion-content>
+		<ion-list show-delete="data.showDelete">
+			<ion-item ng-repeat="item in items | orderBy: '-createdAt' "
+                  item="item"
+                  href="#/app/expense/edit/{{item.objectId}}/{{item.content}}">
+									{{item.content}} - {{item.amount}} - {{item.createdAt}}
+            <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)"></ion-delete-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
