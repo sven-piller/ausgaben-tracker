@@ -7,42 +7,40 @@
 	</ion-nav-buttons>
 
 	<ion-content>
-		<div class="list">
-			<ion-list>
-				<li class="item item-input item-floating-label">
+		<div class="card">
+			<div class="list ">
+				<label class="item item-input">
 					<span class="input-label">Datum</span>
 					<input type="date" name="date" ng-model="expense.date" required>
-					</textarea>
-				</li>
+				</label>
 
-				<li class="item item-input item-floating-label">
+				<label class="item item-input ">
 					<span class="input-label">Einkauf</span>
 					<input type="text" placeholder="Einkauf" name="content" ng-model="expense.content" required>
-					</textarea>
-				</li>
+				</label>
 
-				<li class="item item-input item-floating-label">
+				<label class="item item-input ">
 					<span class="input-label">Händler</span>
 					<input type="text" placeholder="Händler" name="merchant" ng-model="expense.merchant" required>
-					</textarea>
-				</li>
+				</label>
 
-				<li class="item item-input item-floating-label">
-					<span class="input-label">Kategorie</span>
-					<input type="text" placeholder="Kategorie" name="categories" ng-model="expense.categories" required>
-					</textarea>
-				</li>
+				<label class="item item-input  item-select">
+					<span class="input-label"> Kategorie </span>
+					<select name="categories" ng-model="expense.categories" required>
+						<option data-ng-repeat="categorie in categories" value="{{categorie}}">{{categorie}}</option>
+					</select>
+				</label>
 
-				<li class="item item-input item-floating-label">
+				<label class="item item-input ">
 					<span class="input-label">Betrag</span>
 					<input type="number" placeholder="Betrag" name="amount" ng-model="expense.amount" required>
-					</textarea>
-				</li>
+				</label>
 
-				<ion-button class="button button-block button-positive" ng-click="create()">
-					Add
-				</ion-button>
-			</ion-list>
+
+			</div>
 		</div>
+		<ion-button class="button button-block button-positive" ng-click="create()">
+			Add
+		</ion-button>
 	</ion-content>
 </ion-view>
