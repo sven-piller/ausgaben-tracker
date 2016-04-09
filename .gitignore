@@ -27,3 +27,10 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 app/www/lib/
+server/obj/
+server/.ntvs_analysis.dat
+*.sln
+*.etl
+*.tmp
+*.vspx
+*.njsproj
